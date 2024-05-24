@@ -1,17 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import PlanetButtons from './PlanetButtons';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const HomePage = () => (
+  <div>
+    <h1>Welcome to Solaris Space Center</h1>
+    <p>This is the home page of our app. Start exploring the universe!</p>
+    <PlanetButtons /> {/* Include the PlanetButtons component */}
+  </div>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(
+  <React.StrictMode>
+    <HomePage />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
