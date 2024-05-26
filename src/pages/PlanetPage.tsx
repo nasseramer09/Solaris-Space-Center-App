@@ -1,52 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import {useState, useEffect} from 'react';
+import {Link, useParams} from 'react-router-dom';
 import './styles/PlanetPage.css';
-import  {Planet} from '../model/Planet';
-import  PlanetDetails from '../components/PlanetDetails';
+import PlanetType from '../model/planetType.ts';
+import Planet from "../components/Planet.tsx";
+import PlanetDetails from "../components/PlanetDetails.tsx";
 
-
-interface Props {
-  addFavorite: (bodyName: string) => void;
-  removeFavorite: (bodyName: string) => void;
-  favorites: string[];
+type Props = {
+    planets: PlanetType[]
 }
 
-const PlanetPage: React.FC<Props> = ({ addFavorite, removeFavorite, favorites }) => {
-  const [planet, setPlanet] = useState<Planet | null>(null);
-  const { name } = useParams<{ name: string }>();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (!name) return;
+function PlanetPage({planets}: Props) {
+    const [planet, setPlanet] = useState<PlanetType>();
+    const {name} = useParams();
 
-      try {
-        const response = await axios.get(`https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies/${name}`, {
-          headers: { 'x-zocom': 'Api-key' }
-        });
-        setPlanet(response.data);
-      } catch (error) {
-        console.error('Error fetching planet data:', error);
-      }
-    };
+    useEffect(() => {
+        if (typeof name !== 'undefined') {
+            const activePlanet = planets.find(p => p.name === name);
+            setPlanet(activePlanet);
+        }
+    }, [name]);
 
-    fetchData();
-  }, [name]);
+    return (
 
-  return (
-    <div className={`planet-page ${planet?.name?.toLowerCase()}`}>
-      {planet ? (
-        <PlanetDetails 
-          planet={planet} 
-          isFavorite={favorites.includes(planet.name)} 
-          addFavorite={addFavorite} 
-          removeFavorite={removeFavorite} 
-        />
-      ) : (
-        <p>Coming Soon!</p>
-      )}
-    </div>
-  );
+        <section>
+            <section className="back-button">
+                <Link to="/" className="home-link">&lt;&lt; Back</Link>
+            </section>
+            <section className="planet-page">
+                {planet && <Planet planet={planet}/>}
+                {planet && <PlanetDetails planet={planet}/>}
+            </section>
+        </section>
+    );
 }
 
 export default PlanetPage;

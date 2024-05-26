@@ -1,35 +1,40 @@
-import React, { useState } from 'react';
+import {useEffect, useState} from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import PlanetPage from './pages/PlanetPage';
 import FavoritePage from './pages/FavoritePage';
+import PlanetType from './model/planetType.ts';
+import planetsJson from './assets/planets.json';
+import PlanetPage from "./pages/PlanetPage.tsx";
 
-const App: React.FC = () => {
-  const [favorites, setFavorites] = useState<string[]>([]);
+function App() {
+    const [planets, setPlanets] = useState<PlanetType[]>(planetsJson);
+    console.log("planets.length", planets.length);
 
-  const addFavorite = (bodyName: string) => {
-    setFavorites([...favorites, bodyName]);
-  };
+    const [favorites, setFavorites] = useState<string[]>([]);
 
-  const removeFavorite = (bodyName: string) => {
-    setFavorites(favorites.filter(name => name !== bodyName));
-  };
+    const addFavorite = (bodyName: string) => {
+        setFavorites([...favorites, bodyName]);
+    };
 
-  return (
-    <Router>
-      <div className="app">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route 
-            path="/planet/:name" 
-            element={<PlanetPage addFavorite={addFavorite} removeFavorite={removeFavorite} favorites={favorites} />} 
-          />
-          <Route path="/favorites" element={<FavoritePage favorites={favorites} />} />
-        </Routes>
-      </div>
-    </Router>
-  );
+    const removeFavorite = (bodyName: string) => {
+        setFavorites(favorites.filter(name => name !== bodyName));
+    };
+
+    return (
+        <Router>
+            <div className="app">
+                <Routes>
+                    <Route path="/" element={<HomePage planets={planets}/>}/>
+                    <Route
+                        path="/planet/:name"
+                        element={<PlanetPage planets={planets}/>}
+                    />
+                    <Route path="/favorites" element={<FavoritePage favorites={favorites}/>}/>
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 
 export default App;

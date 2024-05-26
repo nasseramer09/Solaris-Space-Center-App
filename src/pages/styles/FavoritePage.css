@@ -4,31 +4,31 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-  }
-  
-  .page-title {
+}
+
+.page-title {
     margin-bottom: 20px;
-  }
-  
-  .favorites-container {
-    max-width: 600px; /* Adjust as needed */
+}
+
+.favorites-container {
+    max-width: 600px;
     width: 100%;
-  }
-  
-  .coming-soon {
+}
+
+.coming-soon {
     padding: 20px;
     background-color: #100d3d;
     color: white;
     font-family: Arial, sans-serif;
-    margin-bottom: 20px; /* Adjust as needed */
+    margin-bottom: 20px;
     text-align: center;
-  }
-  
-  ul {
+}
+
+ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  li {
+}
+
+li {
     margin-bottom: 10px;
-  }
+}

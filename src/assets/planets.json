@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Sun",
+    "type": "star",
+    "diameter": 1392700,
+    "mass": 1.989e30,
+    "gravity": 274,
+    "orbitalPeriod": 0,
+    "description": "The Sun is a G-type main-sequence star (G2V) and is the primary source of energy for the Solar System. It is composed mainly of hydrogen and helium and is responsible for the gravitational hold that keeps the Solar System's planets, \"moons\", and other objects in orbit.",
+    "temp": {
+      "core": 15e6,
+      "surface": 5500
+    },
+    "distance": 0,
+    "moons": []
+  },
+  {
+    "name": "Mercury",
+    "type": "planet",
+    "diameter": 4880,
+    "mass": 3.30e23,
+    "gravity": 3.7,
+    "orbitalPeriod": 88,
+    "description": "Mercury is the closest planet to the Sun and the smallest planet in the Solar System. It has a very thin atmosphere, which means \"temp\"erature fluctuations are extreme.",
+    "temp": {
+      "day": 430,
+      "night": -180
+    },
+    "distance": 57.9e6,
+    "moons": []
+  },
+  {
+    "name": "Venus",
+    "type": "planet",
+    "diameter": 12104,
+    "mass": 4.87e24,
+    "gravity": 8.87,
+    "orbitalPeriod": 225,
+    "temp": {
+      "day": 465,
+      "night": 465
+    },
+    "distance": 108.2e6,
+    "moons": []
+  },
+  {
+    "name": "Earth",
+    "type": "planet",
+    "diameter": 12742,
+    "mass": 5.97e24,
+    "gravity": 9.8,
+    "orbitalPeriod": 365.25,
+    "description": "Earth is the third planet from the Sun and the only one known to support life, with a diverse climate and environment.",
+    "temp": {
+      "day": 15,
+      "night": 15
+    },
+    "distance": 149.6e6,
+    "moons": [
+      "Moon"
+    ]
+  },
+  {
+    "name": "Mars",
+    "type": "planet",
+    "diameter": 6779,
+    "mass": 0.642e24,
+    "gravity": 3.71,
+    "orbitalPeriod": 687,
+    "description": "Mars is known as the Red Planet due to its reddish appearance. It has the largest volcano and canyon in the Solar System.",
+    "temp": {
+      "day": 20,
+      "night": -73
+    },
+    "distance": 227.9e6,
+    "moons": [
+      "Phobos",
+      "Deimos"
+    ]
+  },
+  {
+    "name": "Jupiter",
+    "type": "planet",
+    "diameter": 139820,
+    "mass": 1.90e27,
+    "gravity": 24.79,
+    "orbitalPeriod": 4333,
+    "description": "Jupiter is the largest planet in the Solar System, known for its Great Red Spot and strong magnetic field. It has dozens of \"moons\" and faint rings.",
+    "temp": {
+      "day": -108,
+      "night": -108
+    },
+    "distance": 778.5e6,
+    "moons": [
+      "Ganymede",
+      "Callisto",
+      "Io",
+      "Europa",
+      "and others"
+    ]
+  },
+  {
+    "name": "Saturn",
+    "type": "planet",
+    "diameter": 116460,
+    "mass": 5.68e26,
+    "gravity": 10.44,
+    "orbitalPeriod": 10759,
+    "description": "Saturn is famous for its extensive ring system and has numerous \"moons\". Its atmosphere is mostly hydrogen and helium.",
+    "temp": {
+      "day": -139,
+      "night": -139
+    },
+    "distance": 1.43e9,
+    "moons": [
+      "Titan",
+      "Enceladus",
+      "and others"
+    ]
+  },
+  {
+    "name": "Uranus",
+    "type": "planet",
+    "diameter": 50724,
+    "mass": 8.68e25,
+    "gravity": 8.87,
+    "orbitalPeriod": 30687,
+    "description": "Uranus has a blue-green color due to methane in its atmosphere and rotates on its side, making its seasonal changes extreme.",
+    "temp": {
+      "day": -195,
+      "night": -195
+    },
+    "distance": 2.87e9,
+    "moons": [
+      "Miranda",
+      "Ariel",
+      "Umbriel",
+      "Titania",
+      "Oberon",
+      "and others"
+    ]
+  },
+  {
+    "name": "Neptune",
+    "type": "planet",
+    "diameter": 49244,
+    "mass": 1.02e26,
+    "gravity": 11.15,
+    "orbitalPeriod": 60190,
+    "description": "Neptune is known for its deep blue color and strong winds. It has a similar composition to Uranus and features the Great Dark Spot.",
+    "temp": {
+      "day": -201,
+      "night": -201
+    },
+    "distance": 4.5e9,
+    "moons": [
+      "Triton",
+      "Proteus",
+      "and others"
+    ]
+  }
+]
